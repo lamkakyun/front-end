@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<h3>example: create an app</h3>
+<div id="app">
+    <p>{{ message }}</p>
+</div>
+
+<h3>example:bind value</h3>
+<div id="app-2">
+  <span v-bind:title="message">
+    鼠标悬停几秒钟查看此处动态绑定的提示信息！(v-bind 来动态传递 prop)
+  </span>
+</div>
+
+<h3>example:reponsive UI</h3>
+<div id="app-3">
+    <p v-if="seen">现在你看到我了</p>
+</div>
+
+<h3>example:loop</h3>
+<div id="app-4">
+    <ol>
+        <li v-for="todo in todos">
+            {{ todo.text }}
+        </li>
+    </ol>
+</div>
+
+<h3>example:event processing</h3>
+<div id="app-5">
+    <p>{{ message }}</p>
+    <button v-on:click="reverseMessage">逆转消息</button>
+</div>
+
+<h3>example:using model synchronize data</h3>
+<div id="app-6">
+    <p>{{ message }}</p>
+    <input v-model="message">
+</div>
+
+<h3>example:using component to build app</h3>
+<div id="app-7">
+    <ol>
+        <todo-item
+                v-for="item in groceryList"
+                v-bind:todo="item"
+                v-bind:key="item.id">
+        </todo-item>
+    </ol>
+</div>
+
+<script src="https://unpkg.com/vue"></script>
+<script src="./js/hi.js"></script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+
+<div id="tabs">
+    <button v-for="tab in all_tabs" v-bind:key="tab" v-on:click="active_tab = tab">
+        {{ tab }}
+    </button>
+
+    <component v-bind:is="get_active_tab"></component>
+</div>
+
+<script>
+
+    Vue.component('tab-home', {
+        template: '<div>Home component</div>'
+    });
+    Vue.component('tab-posts', {
+        template: '<div>Posts component</div>'
+    });
+    Vue.component('tab-archive', {
+        template: '<div>Archive component</div>'
+    });
+
+    new Vue({
+        el: '#tabs',
+        data: {
+            active_tab: 'home',
+            all_tabs: ['home', 'posts', 'archive']
+        },
+        computed: {
+            get_active_tab: function() {
+                return 'tab-' + this.active_tab;
+            }
+        }
+    });
+</script>
+</body>
+</html>

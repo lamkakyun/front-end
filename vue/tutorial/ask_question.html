@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js"></script>
+</head>
+<body>
+<div id="ask-answer">
+    <p>
+        Ask a yes/no question:
+        <input v-model="question" />
+    </p>
+    <p>{{ answer }}</p>
+</div>
+
+<script>
+
+    let app = new Vue({
+        el: '#ask-answer',
+        data: {
+            question: '',
+            answer: 'I cannot give you an answer until you ask a question!',
+        },
+        watch: {
+            // trigger when question change
+            question: function() {
+                this.answer = 'Waiting for you to stop typing...';
+                this.delay_util_get_answer();
+            }
+        },
+        created: function() {
+            // 停顿1s，将自动生成 答案
+            this.delay_util_get_answer = _.debounce(this.gen_answer, 1000)
+        },
+        methods: {
+            gen_answer: function() {
+                if (this.question.indexOf('?') === -1)
+                {
+                    this.answer = 'Questions usually contain a question mark. ;-)';             return
+                }
+                // generate answer
+                this.answer = 'Thinking...';
+                let vm = this;
+                axios.get('http://log1.test.com/index/test/testvue')
+                    .then(function(res) {
+                        vm.answer = _.capitalize(res.data.msg);
+                    })
+                    .catch(function (err) {
+                        vm.answer = 'Error! Could not reach the API. ' + error
+                    });
+            }
+        }
+    })
+</script>
+</body>
+</html>
