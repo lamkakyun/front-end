@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+
+<div id="test">
+    <my-heading :level="1">Hello world!</my-heading>
+    <my-heading :level="2">Hello world!</my-heading>
+    <my-heading :level="3">Hello world!</my-heading>
+    <my-heading :level="4">Hello world!</my-heading>
+    <my-heading :level="5">Hello world!</my-heading>
+    <my-heading :level="6">Hello world!</my-heading>
+</div>
+
+<script>
+    // create a component
+    Vue.component('my-heading',  {
+        render: function(createElement) {
+            return createElement('h' + this.level, this.$slots.default);
+        },
+        props: {
+            level: {
+                type: Number,
+                required: true,
+            }
+        }
+    });
+
+    new Vue({
+        el: '#test'
+    })
+</script>
+</body>
+</html>
