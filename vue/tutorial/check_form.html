@@ -10,9 +10,67 @@
 </head>
 <body>
 
-<form action=""></form>
+<form action="" id="app" @submit="checkform">
+
+    <p v-if="errors.length">
+        <b>Please correct the following error(s):</b>
+        <ul>
+            <li v-for="err in errors">
+                {{ err }}
+            </li>
+        </ul>
+    </p>
+
+    <p>
+        <label for="">name</label>
+        <input type="text" name="name" v-model="name">
+    </p>
+
+    <p>
+        <label for="">age</label>
+        <input type="text" name="age" v-model="age">
+    </p>
+
+    <p>
+        <label for="">email</label>
+        <input type="text" name="email" v-model="email">
+    </p>
+
+    <p>
+        <input type="submit" value="submit">
+    </p>
+</form>
 
 <script>
+
+const app = new Vue({
+    el: '#app',
+    data: {
+        errors: [],
+        name: null,
+        age: null,
+        movie: null,
+        email: null,
+    },
+    methods: {
+        checkform: function(e)
+        {
+            this.errors = [];
+            if (!this.name) this.errors.push('name required');
+            if (!this.age) this.errors.push('age required');
+            if (!this.email) this.errors.push('email required');
+            else if (!this.check_email(this.email)) this.errors.push('valid email required');
+            console.log(this.errors.length, this.errors)
+            if (!this.errors.length) return true;
+            e.preventDefault();
+        },
+        check_email: function(email)
+        {
+            var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return re.test(email);
+        }
+    }
+});
 
 </script>
 </body>
