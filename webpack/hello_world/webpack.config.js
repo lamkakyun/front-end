@@ -1,10 +1,17 @@
-const path = require('path')
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
   mode: 'development',
-  entry: './src/index.js',
+  // entry: './src/index.js',
+  entry: {
+    app: './src/index.js',
+    print: './src/print.js'
+  },
   output: {
-    filename: 'main.js',
+    // filename: 'main.js',
+    filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist')
   },
   module: {
@@ -35,5 +42,11 @@ module.exports = {
         ]
       }
     ]
-  }
+  },
+  plugins: [
+    new CleanWebpackPlugin(['dist']), // dist 文件夹在我们不停的重新编译的过程中，产生了许多废弃的文件，这个插件，重新生成dist 文件夹，清除了不需要的文件
+    new HtmlWebpackPlugin({ // 有了这个插件，将重新生成 一个新的 index.html,使得我们修改 entry point或者其他配置时，无需手动修改 index.html
+      title: 'Output Management' 
+    })
+  ]
 }
