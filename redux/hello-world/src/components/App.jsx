@@ -1,5 +1,4 @@
 import React from 'react';
-import Countor from './Countor';
 
 class App extends React.Component {
 
