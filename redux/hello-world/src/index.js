@@ -60,7 +60,8 @@ const App = connect(
     mapDispatchToProps
 )(Counter);
 
-let store = createStore(reducers);;
+let init_counter_state = {count: 100};
+let store = createStore(reducers, init_counter_state);;
 
 const render = () => ReactDOM.render(
     <div>
