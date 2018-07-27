@@ -35,7 +35,7 @@ const incAction = {type: 'INC'};
 
 // react-redux api needed 2 functions
 function mapStateToProps(state) {
-	return {value: state.count};
+	return {value: state.count}; // value is one of props
 }
 
 // dispatch call reducer internally, i think dispatch wrotten like this:
@@ -48,7 +48,7 @@ function dispatch(action)
 */
 function mapDispatchToProps(dispatch) {
     return {
-        onInc: () => {
+        onInc: () => { // onInc is one props
             dispatch(incAction);
         }
     }
