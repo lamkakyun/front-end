@@ -4,10 +4,13 @@ const concat = require('gulp-concat');
 const uglify = require('gulp-uglify');
 const rename = require('gulp-rename');
 const cleanCSS = require('gulp-clean-css');
+const minifyCSS = require('gulp-minify-css');
+const autoprefixer = require('gulp-autoprefixer');
 
 let paths = {
     scripts: ['js/index.js', 'js/main.js'],
-    css_scripts: ['css/index.css', 'css/main.css'],
+    //css_scripts: ['css/index.css', 'css/main.css'],
+    css_scripts: ['css/main.css','css/index.css',],
 };
 
 // build a task
@@ -16,8 +19,15 @@ gulp.task('jshint', function() {
 });
 
 // minify only
+// gulp.task('minifycss', function() {
+//     return gulp.src(paths.css_scripts).pipe(rename({suffix: '.min'})).pipe(cleanCSS({compatibility: 'ie7'})).pipe(gulp.dest('dist/css'))
+// });
 gulp.task('minifycss', function() {
-    return gulp.src(paths.css_scripts).pipe(rename({suffix: '.min'})).pipe(cleanCSS({compatibility: 'ie7'})).pipe(gulp.dest('dist/css'))
+    return gulp.src(paths.css_scripts).
+        pipe(minifyCSS()).
+        pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9')).
+        pipe(concat('style.min.css')).
+        pipe(gulp.dest('dist/css'));
 });
 
 // minify and merge
