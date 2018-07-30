@@ -1,0 +1,141 @@
+.orders-body{background:#e0ebec}
+h1,h2,h3,h4,h5,h6{font-weight:100}
+h1{font-size:30px}
+h2{font-size:24px}
+h3{font-size:16px}
+h4{font-size:14px}
+h5{font-size:12px}
+h6{font-size:10px}
+h3,h4,h5{margin-top:5px;font-weight:600}
+
+a:link, a:visited, a:hover {text-decoration: none}
+
+#btn_top {z-index:999;position: fixed;bottom: 60px;right: 10px; background: rgba(0,0,0,.3); border-radius: 5px; border: none; width: 40px; height: 40px;font-size: 30px;padding: 0px;display: none}
+#wrapper {width: 100%; height: 100%;overflow-x: hidden;padding: 5px;}
+#wrapper .left-wrapper {position: fixed;width: 150px;z-index: 2001;height: 100%; background: #fff}
+#wrapper .right-wrapper{position: inherit; height: 100%;margin: 0px 0px 0px 155px; background: #fff; min-height: 768px;}
+
+.slideMenu,
+.slideMenu > li,
+.slideMenu > li > ul,
+.slideMenu > li > ul > li,
+.slideMenu > li > ul > li > ul,
+.slideMenu > li > ul > li > ul > li {margin:0;padding: 0;list-style: none;user-select: none;}
+.slideMenu {display: block;margin-bottom: 5px;/*background: #e8f8ff;*/}
+.slideMenu > li > span {display: block;line-height: 25px;font-size: 14px;font-weight: bold;color: #fff;background: #5bc0de;text-indent: 5px;cursor: pointer;}
+.slideMenu > li > ul > li > span {display: block;line-height: 25px;cursor: pointer;}
+.slideMenu > li > ul,.slideMenu > li > ul > li > ul {display: none;}
+.slideMenu > li .show {display: block !important;}
+.slideMenu > li > ul > li {display: block;line-height: 25px;font-size: 12px;color: #888;text-indent: 2px;cursor: pointer;text-overflow:ellipsis; white-space:nowrap; overflow:hidden;}
+.slideMenu > li > ul > li > ul {text-indent: 15px;}
+.slideMenu > li > ul > li > span:hover,.slideMenu > li > ul > li .active {cursor: pointer;color: #1c84c6;}
+.slideMenu > li > ul > li > ul > li {padding-right: 5px;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;}
+.slideMenu > li > ul > li > ul > li:hover,.slideMenu > li > ul > li > ul > li.active {cursor: pointer;color: #1c84c6;}
+/*限制最大高度，超出显示滚动条*/
+.slideMenu > li #filter_order {max-height: 450px !important;overflow-y: scroll;}
+.slideMenu a {color: #555}
+.slideMenu a:link, a:visited, a:hover {text-decoration: none}
+.slideMenu a:hover {color:#1c84c6}
+.slideMenu a span {padding-left: 3px; padding-right: 6px;}
+.slideMenu a small{color: red;font-size: 10px;font-weight: 100;}
+
+.search {padding: 10px 0px;}
+.ibox-content .table {margin-bottom: 10px;}
+.selectpicker {height: 30px;}
+.col-order {float: left}
+
+.form-inline .form-group {padding-bottom: 5px;}
+.form-group .label{background-color:#B1BCC3;color:#fff;font-family:'Open Sans';font-size:11px;font-weight:100;text-shadow:none;cursor: pointer;display: inline-block; padding: 5px;margin-bottom: 5px;}
+.form-group .label-primary{background-color:#1ab394;color:#FFF}
+.form-group .label-success{background-color:#1c84c6;color:#FFF}
+.form-group .label-warning{background-color:#f8ac59;color:#FFF}
+.form-group .label-warning-light{background-color:#f8ac59;color:#fff}
+.form-group .label-danger{background-color:#ed5565;color:#FFF}
+.form-group .label-info{background-color:#23c6c8;color:#FFF}
+.ibox-content .input-daterange input{width: 140px;}
+/*.ordersearch {margin-top: 10px;}*/
+.ordersearch .btn {padding: 4px; max-width: 160px;}
+.ordersearch .lable-title {width: 80px; text-align: right; vertical-align: middle}
+.form-group-button {margin: 0px auto; text-align: center}
+
+
+.form-control:focus,.single-line:focus{border-color:#1ab394!important}
+.has-success .form-control{border-color:#1ab394}
+.has-warning .form-control{border-color:#f8ac59}
+.has-error .form-control{border-color:#ed5565}
+.has-success .control-label{color:#1ab394}
+.has-warning .control-label{color:#f8ac59}
+.has-error .control-label{color:#ed5565}
+
+.table-orders {font-size: 12px;}
+.form-inline .table>tbody>tr>td {padding: 5px;border-color: #eee;}
+.ibox-content .table>tbody>tr>td {padding: 3px;}
+.ibox-content .table-orders th {padding: 3px;vertical-align: middle;font-size: 12px;min-width: 80px;}
+.table-orders .th-number input{margin-top: 10px;}
+.table-orders .th-number span{float: left; margin-left: 5px;}
+
+.table-orders .td-number span {display: block; padding-bottom: 5px; padding-left: 5px;}
+.table-orders .td-number span input {float: left;}
+.table-orders .td-number span strong {font-size: 14px; float: left; padding-left: 5px;}
+.table-orders .td-number small {font-size: 9px;}
+.table-orders .td-number {word-break: break-all}
+.table-orders .td-status {font-weight: bold; text-align: center}
+.table-orders .td-status .label {display: inline-block; margin-bottom: 3px;}
+.table-orders .td-status .label-link {color: #595959}
+.table-orders .td-status .label-none{color: #333; background: #fff; border: 1px solid #ccc;}
+.table-orders .account {display: inline-block; margin-top: 5px;}
+.table-orders .money {color:#1c84c6}
+.table-orders .profit {color: #1ab394; font-weight: bold; cursor: pointer}
+.table-orders .profit:hover {color: #5bc0de;}
+.table-orders .channel {color: #AA00FF;font-weight: 100;}
+.table-orders .cno {color: red;}
+.table-orders .sign {color:#5cb85c;}
+.table-orders .more {font-weight: 100; cursor: pointer}
+.table-orders .actions button {margin-bottom: 5px; display: block}
+.table-orders .notes {padding-top: 5px; font-size: 12px; font-weight: bold; color: #e9322d; word-break: break-all; max-width: 400px;}
+.table-orders .notes p {margin: 0 0 5px;}
+.table-orders .skuimg {cursor: pointer;}
+.table-orders .order {background: #f0f0f0;color: #000}
+.table-orders .text-danger {color: red;}
+.table-orders .td-abnormal {font-size: 12px; word-break: break-all; color: #0b09ff}
+
+.batch-bar {padding: 5px 0px 5px 10px; background: #fff;}
+.batch-bar .left {float: left; line-height: 30px;}
+.batch-bar .right {float: right;}
+.batch-bar .pagination {margin: 0px; padding-right: 5px;}
+.batch-bar .pagination a {color:#333;}
+.batch-bar .pagination .active a{background: #18a689; border-color: #18a689}
+.batch-bar .pagination ul li {margin-left: 0px;}
+.batch-bar .pagination-detail {color: #555; padding-right: 20px;}
+.batch-bar .total strong {padding-right: 10px;}
+
+.dropleft .dropdown-menu {left: -100px;}
+.trace-bar .btn {margin-bottom: 10px; margin-right: 5px;color: #fff; padding:  3px 5px;}
+.trace-bar .btn-default{color: #333;}
+.trace-bar .btn-default .badge {background: #e6e6e6; color: red;  margin-left: 2px;}
+.trace-from {padding: 10px; background: #fcf8e3; border: 1px solid #faebcc}
+
+.dropdown-menu>li>a {font-size: 13px;}
+.iboxfull-content {background: #fff; padding: 10px; min-height: 800px;}
+.nav-tabs {margin-left: 0px;}
+.nav-orders a {font-size: 14px; }
+.sync-form {padding: 50px;}
+.sync-form-alert {margin-top: 50px;}
+.dropdown-header {font-weight: bold;}
+.tr_order_sku p, .sku p {padding: 0px;margin: 0px;}
+.layui-layer-content {font-size: 14px;font-family:'Open Sans';}
+.order .label {font-size: 100%;}
+.ibox-content > .numberpicker {width: 100px;}
+.layer-content {padding: 10px;font-size: 14px;}
+.layui-layer-content .ajaxProfit th,.layui-layer-content .ajaxProfit td{border: 1px solid #222; padding: 2px 5px;}
+.layer_tips{cursor: pointer;}
+.fc911{  color: #911;  }
+.cursor {cursor: pointer}
+
+.search-mini {padding-right:10px;padding-left: 5px;}
+.layui-layer-content {word-break: break-all}
+.ebay_status a{color: #fff}
+.ebay_status a:hover{color: #fff;}
+.layer-content-open{padding: 30px;}
+.ordernotes {color: #0F9932; padding: 3px; border: 1px dotted #0F9932;}
+.margintop5{margin-top: 5px;}
