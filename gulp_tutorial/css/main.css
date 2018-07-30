@@ -1,0 +1,8 @@
+body {
+    height: 500px;
+}
+
+.main {
+    width: 1000px;
+    border 10px solid yellow;
+}
